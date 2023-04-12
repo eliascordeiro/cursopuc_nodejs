@@ -7,9 +7,12 @@ para instalar
 para rodar
 - yarn start
 
-ver arquivo .env para configurar mysql
+- link da apresentação -> https://youtu.be/pYfyBZHAvGk
 
-**entrega com atraso devido a problemas para publicar o video
+- link do repositorio nodejs -> https://github.com/eliascordeiro/cursopuc_nodejs
+- link do repositorio springboot -> https://github.com/eliascordeiro/cursopuc_springboot
+- link do repositorio frontend -> https://github.com/eliascordeiro/cursopuc_frontend
 
-link da apresentação -> https://youtu.be/pYfyBZHAvGk
+*entrega com atraso devido a problemas para publicar o video
 
+*ver arquivo .env para configurar mysql
