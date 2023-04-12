@@ -1,0 +1,21 @@
+tags:
+  - name: cep
+    description: Pesquisa cep
+  
+components:
+  schemas:
+    cep_request:
+      type: object
+      required:
+        - cep
+      properties:
+        cep:
+          type: integer
+          format: int32
+          example: 83705230  
+    
+  securitySchemes:
+    JWT:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

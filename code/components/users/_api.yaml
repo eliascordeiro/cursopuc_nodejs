@@ -1,0 +1,104 @@
+tags:
+  - name: users
+    description: Cria usuários a partir de EMPRESAS ou MONTADORES criados
+
+components:
+  schemas:
+    CreateUser:
+      type: object
+      required:
+        - name
+        - username
+        - password
+        - email 
+      properties:
+        name:
+          type: string
+          minLength: 5
+          maxLength: 50
+          example: jose da silva
+        username:
+          type: string
+          minLength: 5
+          maxLength: 30
+          example: josedasilva
+        password:
+          type: string
+          example: 123456
+        email:
+          type: string
+          minLength: 5
+          maxLength: 60
+          example: josedasilva@hotmail.com  
+
+    UpdateUser:
+      type: object
+      required:
+        - name
+        - username
+        - password
+        - email 
+      properties:
+        name:
+          type: string
+          minLength: 5
+          maxLength: 50
+          example: jose da silva
+        username:
+          type: string
+          minLength: 5
+          maxLength: 30
+          example: josedasilva
+        password:
+          type: string
+          example: 123456
+        email:
+          type: string
+          minLength: 5
+          maxLength: 60
+          example: josedasilva@hotmail.com  
+
+    UsernamePassword:
+      type: object
+      required:
+        - username
+        - password
+      properties:
+        username:
+          type: string
+          minLength: 5
+          maxLength: 30
+          example: admin
+        password:
+          type: string
+          example: 'admin'
+
+    AuthPassword:
+      type: object
+      required:
+        - password
+      properties:
+        password:
+          type: string
+          example: 123456
+  
+    Id:
+      type: integer
+      format: int32
+      minimum: 1
+      example: 150
+    
+  parameters:
+    Id:
+      in: path
+      name: id
+      description: Unique id
+      required: true
+      schema:
+        $ref: '#/components/schemas/Id'
+  
+  securitySchemes:
+    JWT:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

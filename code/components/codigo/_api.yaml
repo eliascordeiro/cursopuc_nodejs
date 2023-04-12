@@ -1,0 +1,20 @@
+tags:
+  - name: code
+    description: Envia código randomizado de 6 dígitos no email - * configurar smtp em \Util  
+  
+components:
+  schemas:
+    codeEmail:
+      type: object
+      required:
+        - email
+      properties:
+        email:
+          type: string
+          example: email@gmail.com  
+    
+  securitySchemes:
+    JWT:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

@@ -1,0 +1,195 @@
+tags:
+  - name: montagens
+    description: Cria um registro de montagem
+  
+components:
+  schemas:
+    create_montagens:
+      type: object
+      properties:
+        cliente:
+          type: array
+          items:
+            type: object      
+            properties:       
+              nome:
+                type: string
+                example: Jose da Silva
+              cep:
+                type: string
+                example: 83705230  
+              endereco:
+                type: string
+                example: Avenida 7 de setembro  
+              numero:
+                type: string
+                example: 99999
+              bairro:
+                type: string
+                example: Centro    
+              cidade:
+                type: string
+                example: Curitiba      
+              uf:
+                type: string
+                example: Pr        
+              complemento:
+                type: string
+                example: condominio paraiso bloco 3
+              previsao:
+                type: string
+                example: 2023-01-01   
+              dataCadastro:
+                type: string
+                example: 2023-01-01  
+              montador:
+                type: integer
+                format: int32
+                minimum: 1
+                example: 1
+              empresas:
+                type: integer
+                format: int32
+                minimum: 1
+                example: 1       
+
+        produtos:
+          type: array
+          items:
+            type: object      
+            properties:       
+              codigo:
+                type: string
+                example: 0002
+              descricao:
+                type: string
+                example: cozinha planejada brazil
+              precoUnitario:
+                type: number
+                format: double
+                example: 0.01  
+              quantidade:
+                type: integer
+                format: int32
+                minimum: 1
+                example: 3
+              totalProdutos:
+                type: number
+                format: double
+                example: 11.33
+              percentualMontagem:
+                type: number
+                format: double
+                example: 11.33  
+              totalMontagem:
+                type: number
+                format: double
+                example: 11.33 
+    
+    update_montagens:
+      type: object
+      properties:
+        cliente:
+          type: array
+          items:
+            type: object      
+            properties:  
+              id:
+                type: integer
+                format: int32
+                minimum: 1
+                example: 1  
+              nome:
+                type: string
+                example: Jose da Silva
+              cep:
+                type: string
+                example: 83705230  
+              endereco:
+                type: string
+                example: Avenida 7 de setembro  
+              numero:
+                type: string
+                example: 99999
+              bairro:
+                type: string
+                example: Centro    
+              cidade:
+                type: string
+                example: Curitiba      
+              uf:
+                type: string
+                example: Pr        
+              complemento:
+                type: string
+                example: condominio paraiso bloco 3
+              previsao:
+                type: string
+                example: 2023-01-01   
+              dataCadastro:
+                type: string
+                example: 2023-01-01       
+              montador:
+                type: integer
+                format: int32
+                minimum: 1
+                example: 1
+              empresas:
+                type: integer
+                format: int32
+                minimum: 1
+                example: 1       
+
+        produtos:
+          type: array
+          items:
+            type: object      
+            properties:   
+              codigo:
+                type: string
+                example: 0002
+              descricao:
+                type: string
+                example: cozinha planejada brazil
+              precoUnitario:
+                type: number
+                format: double
+                example: 0.01  
+              quantidade:
+                type: integer
+                format: int32
+                minimum: 1
+                example: 3
+              totalProdutos:
+                type: number
+                format: double
+                example: 11.33
+              percentualMontagem:
+                type: number
+                format: double
+                example: 11.33  
+              totalMontagem:
+                type: number
+                format: double
+                example: 11.33 
+      
+    Id:
+      type: integer
+      format: int32
+      minimum: 1
+      example: 150
+    
+  parameters:
+    Id:
+      in: path
+      name: id
+      description: Unique id
+      required: true
+      schema:
+        $ref: '#/components/schemas/Id'
+  
+  securitySchemes:
+    JWT:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

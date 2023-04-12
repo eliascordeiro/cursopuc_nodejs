@@ -1,0 +1,66 @@
+tags:
+  - name: empresas
+    description: Cria empresa de montagens
+  
+components:
+  schemas:
+    create_empresas:
+      type: object
+      required:
+        - nome
+        - email
+        - telefone
+      properties:
+        nome:
+          type: string
+          example: Jose da Silva
+        email:
+          type: string
+          example: email@email.com  
+        telefone:
+          type: string
+          example: 41 99999 9999  
+
+    update_empresas:
+      type: object
+      required:
+        - id
+        - nome
+        - email
+        - telefone
+      properties:
+        id:
+          type: integer
+          format: int32
+          minimum: 1
+          example: 150
+        nome:
+          type: string
+          example: Jose da Silva
+        email:
+          type: string
+          example: email@email.com  
+        telefone:
+          type: string
+          example: 41 99999 9999  
+
+    Id:
+      type: integer
+      format: int32
+      minimum: 1
+      example: 150
+    
+  parameters:
+    Id:
+      in: path
+      name: id
+      description: Unique id
+      required: true
+      schema:
+        $ref: '#/components/schemas/Id'
+  
+  securitySchemes:
+    JWT:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
